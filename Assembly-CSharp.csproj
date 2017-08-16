@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{31EA003C-1CF9-D946-A919-8AC5ED6BE76A}</ProjectGuid>
+    <ProjectGuid>{A6D6D30B-39B7-68F2-D991-CA07CD82EEFC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,8 +61,15 @@
      <Compile Include="Assets\_Complete-Game\Scripts\Done_PlayerController.cs" />
      <Compile Include="Assets\_Complete-Game\Scripts\Done_RandomRotator.cs" />
      <Compile Include="Assets\_Complete-Game\Scripts\Done_WeaponController.cs" />
+     <Compile Include="Assets\Scripts\asteroidController.cs" />
+     <Compile Include="Assets\Scripts\boltController.cs" />
+     <Compile Include="Assets\Scripts\crystalController.cs" />
+     <Compile Include="Assets\Scripts\gameController.cs" />
+     <Compile Include="Assets\Scripts\outOfLimits.cs" />
+     <Compile Include="Assets\Scripts\outOfTime.cs" />
      <Compile Include="Assets\Scripts\playerController.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+     <None Include="Assets\Shaders\Gem.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

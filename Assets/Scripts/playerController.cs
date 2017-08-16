@@ -6,15 +6,33 @@ public class playerController : MonoBehaviour {
 	private Rigidbody playerRigidbody;
 	private Vector3 direction;
 	private Quaternion orientation;
+	private float nextFire;
+	private List<GameObject> bodyParts;
 
+	public ParticleSystem[] engines;
 	public float speed;
+	public GameObject shot;
+	public GameObject bodyPart;
+	public Transform spawnShots;
+	public Transform spawnBody;
+	public float fireRate;
 
 	// Use this for initialization
 	void Start () {
+		bodyParts = new List<GameObject> ();
 		playerRigidbody = gameObject.GetComponent<Rigidbody> ();
 		direction = new Vector3 ();
 		orientation = new Quaternion ();
 		playerRigidbody.velocity = direction * speed;
+		nextFire = 0.0f;
+	}
+
+	void Update() {
+		if (Input.GetButton ("Fire1") && Time.time > nextFire) {
+			nextFire = Time.time + fireRate;
+			GameObject bolt = Instantiate (shot, spawnShots.position, spawnShots.rotation) as GameObject;
+			bolt.GetComponent<Transform> ().rotation = orientation;
+		}
 	}
 
 	void FixedUpdate () {
@@ -40,12 +58,15 @@ public class playerController : MonoBehaviour {
 
 		playerRigidbody.velocity = direction * speed;
 		gameObject.transform.rotation = orientation;
-//
-//		for (int i = 1; i < transform.childCount; i++) {
-//			Rigidbody bodyRigidbody = transform.GetChild (i).gameObject.GetComponent<Rigidbody> ();
-//			Vector3 follow = transform.GetChild (i - 1).position - transform.GetChild (i).position;
-//			if (follow.magnitude > 1.1f)
-//				bodyRigidbody.velocity = follow * speed * 0.75f;
-//		}
+		foreach (ParticleSystem e in engines) {
+			var main = e.main;
+			main.startRotation = gameObject.transform.rotation.eulerAngles.y * Mathf.Deg2Rad;
+		}
+	}
+
+	void OnTriggerEnter(Collider other) {
+		if (other.tag == "pickUp") {
+			bodyParts.Add(Instantiate(bodyPart, spawnBody) as GameObject);
+		}
 	}
 }
