@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\asteroidController.cs">
+    <Files>
+      <File FileName="Assets\Scripts\outOfLimits.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\asteroidController.cs" Line="28" Column="37" />
+      <File FileName="Assets\Scripts\crystalController.cs" Line="15" Column="3" />
+      <File FileName="Assets\Scripts\outOfTime.cs" Line="7" Column="24" />
+      <File FileName="Assets\Scripts\playerController.cs" Line="69" Column="64" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
